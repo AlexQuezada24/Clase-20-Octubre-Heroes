@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar class="comic-toolbar-detail">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lista-personajes"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>{{ personaje?.alias || 'Cargando...' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="personaje; else noEncontrado" class="comic-detail-card">
+    
+    <div class="comic-title-box">
+      <h2>{{ personaje.nombre }}</h2>
+    </div>
+
+    <ion-list class="detail-list" lines="none">
+      <ion-item>
+        <ion-label>
+          <h3>Equipo</h3>
+          <p>{{ personaje.equipo }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <h3>Poder Principal</h3>
+          <p>{{ personaje.poderPrincipal }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <h3>Primera Aparición</h3>
+          <p>{{ personaje.primeraAparicion }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+  <ng-template #noEncontrado>
+    <div *ngIf="personajeNoEncontrado" class="ion-padding ion-text-center">
+      <h1>Personaje no encontrado</h1>
+      <p>El personaje que buscas no existe o la URL es incorrecta.</p>
+    </div>
+  </ng-template>
+</ion-content>

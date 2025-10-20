@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar class="comic-toolbar">
+    <ion-title>HÉROES Y VILLANOS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+
+    <ion-card *ngFor="let p of personajes; let i = index" 
+              [routerLink]="['/detalle-personaje', i]" 
+              class="comic-card"
+              button="true">
+      
+      <ion-card-header>
+        <ion-card-title>{{ p.alias }}</ion-card-title>
+        <ion-card-subtitle>{{ p.nombre }}</ion-card-subtitle>
+      </ion-card-header>
+
+    </ion-card>
+
+  </div>
+</ion-content>
