@@ -1,0 +1,7 @@
+{
+  "name": "clase-20-oct",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
